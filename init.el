@@ -9,5 +9,8 @@
   (file-name-handler-alist nil))
   (add-subdirs-to-load-path "~/.emacs.d/etc/"))
 
-(require 'init-config)
 
+(add-to-list `load-path (expand-file-name "~/elisp"))
+(require 'awesome-tray)
+(awesome-tray-mode 1)
+(require 'init-config)
