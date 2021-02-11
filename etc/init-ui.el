@@ -30,12 +30,17 @@
   :config
   (setq highlight-indent-guides-method 'bitmap))
 
+;; 主题包
 (use-package doom-themes
   :ensure t
   :config
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t))
 
+;; 加载主题
 (load-theme 'doom-dracula t)
+
+;; 透明窗口
+(set-frame-parameter nil 'alpha '(85 . 100))
 
 (provide 'init-ui)
