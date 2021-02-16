@@ -72,7 +72,7 @@
                     (font-spec :family "微软雅黑" :size 30)))
 
 ;; awesome-tab设置
-(require 'awesome-tab)
-(awesome-tab-mode t)
+;; (require 'awesome-tab)
+;; (awesome-tab-mode t)
 
 (provide 'init-ui)
