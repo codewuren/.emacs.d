@@ -43,6 +43,22 @@
 ;; 加载主题
 (load-theme 'doom-dracula t)
 
+(use-package all-the-icons
+	:ensure t)
+  ;; dired模式图标支持
+(use-package all-the-icons-dired
+  :ensure t
+  :hook ('dired-mode . 'all-the-icons-dired-mode))
+;; 表情符号
+(use-package emojify
+  :ensure t
+  :custom (emojify-emojis-dir "~/.emacs.d/var/emojis"))
+;; 浮动窗口支持
+(use-package posframe
+  :ensure t
+  :custom
+  (posframe-mouse-banish nil))
+
 ;; 透明窗口
 (set-frame-parameter nil 'alpha '(85 . 100))
 
@@ -54,5 +70,9 @@
 (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset
                     (font-spec :family "微软雅黑" :size 30)))
+
+;; awesome-tab设置
+(require 'awesome-tab)
+(awesome-tab-mode t)
 
 (provide 'init-ui)
