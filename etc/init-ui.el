@@ -50,4 +50,9 @@
 (require 'awesome-tray)
 (awesome-tray-mode 1)
 
+;; 中文字体设置
+(dolist (charset '(kana han cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font) charset
+                    (font-spec :family "微软雅黑" :size 30)))
+
 (provide 'init-ui)
