@@ -7,6 +7,9 @@
 ;; 字体设置
 (set-frame-font "JetBrains Mono 20" nil t)
 
+;; 关闭状态栏
+;; (setq-default mode-line-format nil)
+
 ;; 启动时最大化
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -42,5 +45,9 @@
 
 ;; 透明窗口
 (set-frame-parameter nil 'alpha '(85 . 100))
+
+;; awesome-tray配置
+(require 'awesome-tray)
+(awesome-tray-mode 1)
 
 (provide 'init-ui)

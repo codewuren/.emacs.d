@@ -45,15 +45,6 @@
 ;; 关闭烦人的提示
 (setq ring-bell-function 'ignore blink-cursor-mode nil)
 
-;; 任何地方都使用UTF-8
-(set-charset-priority 'unicode) 
-(setq locale-coding-system   'utf-8)    ; pretty
-(set-terminal-coding-system  'utf-8)    ; pretty
-(set-keyboard-coding-system  'utf-8)    ; pretty
-(set-selection-coding-system 'utf-8)    ; please
-(prefer-coding-system        'utf-8)    ; with sugar on top
-(setq default-process-coding-system '(utf-8 . utf-8))
-
 ;; 更友好及平滑的滚动
 (setq scroll-step 2
       scroll-margin 6
