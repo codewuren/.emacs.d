@@ -62,14 +62,14 @@
 ;; 透明窗口
 (set-frame-parameter nil 'alpha '(85 . 100))
 
-;; awesome-tray配置
-(require 'awesome-tray)
-(awesome-tray-mode 1)
-
 ;; 中文字体设置
 (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) charset
-                    (font-spec :family "微软雅黑" :size 30)))
+                    (font-spec :family "wqy-microhei" :size 30)))
+
+;; awesome-tray配置
+(require 'awesome-tray)
+(awesome-tray-mode 1)
 
 ;; awesome-tab设置
 ;; (require 'awesome-tab)

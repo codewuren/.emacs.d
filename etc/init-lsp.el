@@ -36,4 +36,7 @@
         lsp-ui-sideline-enable nil
         lsp-signature-render-documentation nil))
 
+;; eglot
+(use-package eglot
+	     :ensure t)
 (provide 'init-lsp)

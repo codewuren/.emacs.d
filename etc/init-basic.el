@@ -85,6 +85,66 @@
   :config
   (which-key-mode 1))
 
+;; 增强了搜索功能
+(use-package swiper
+  :ensure t
+  :bind
+  (("C-s" . swiper)
+   ("C-r" . swiper)
+   ("C-c C-r" . ivy-resume)
+   ("M-x" . counsel-M-x)
+   ("C-x C-f" . counsel-find-file))
+  :config
+  (setq counsel-describe-function-function #'helpful-callable)
+  (setq counsel-describe-variable-function #'helpful-variable)
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)
+    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
+
+;; counsel
+(use-package counsel
+  :ensure t
+  :bind
+  (("C-x C-r" . 'counsel-recentf) 
+   ("C-x d" . 'counsel-dired))
+  :config
+  ;; 默认的 rg 配置
+  ;; (setq counsel-rg-base-command "rg -M 240 --with-filename --no-heading --line-number --color never %s")
+  (setq counsel-rg-base-command (list "rg"
+									  "-M" "240"
+									  "--with-filename" "--no-heading" "--line-number" "--color"
+									  "never" "%s"
+									  "-g" "!package-config.org"
+									  "-g" "!site-lisp"
+									  "-g" "!doc"
+									  "-g" "!themes"
+                                      "-g" "!quelpa"
+                                      "-g" "!etc-cache"))
+  (setq counsel-fzf-cmd "fd -I --exclude={site-lisp,etc/snippets,themes,/eln-cache,/var,/elpa,quelpa/,/url,/auto-save-list,.cache,doc/} --type f | fzf -f \"%s\" --algo=v1")
+  ;; Integration with `projectile'
+  (with-eval-after-load 'projectile
+    (setq projectile-completion-system 'ivy))
+  )
+
+;; counsel提供对项目管理的支持
+(use-package 
+  counsel-projectile 
+  :ensure t 
+  :hook ((counsel-mode . counsel-projectile-mode)) 
+  :init (setq counsel-projectile-grep-initial-input '(ivy-thing-at-point)) 
+  :bind (:map leader-key
+              ("p" . #'projectile-command-map)))
+
+(use-package ivy-fuz
+  :ensure t)
+
+;; hydra
+(use-package hydra
+  :ensure t
+  )
+
 ;; 相对行号，默认未开启
 (use-package linum-relative
   :ensure t
