@@ -145,9 +145,21 @@
   :ensure t
   )
 
-;; 相对行号，默认未开启
+;; 相对行号
 (use-package linum-relative
   :ensure t
   :hook ('prog-mode . 'linum-relative-mode))
+
+;; request
+(use-package request
+  :ensure t)
+
+;; async
+(use-package async
+  :ensure t)
+
+;; netease-cloud-music
+(add-to-list 'load-path "~/.emacs.d/etc/netease-cloud-music.el")
+(require 'netease-cloud-music)
 
 (provide 'init-basic)

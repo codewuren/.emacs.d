@@ -1,12 +1,10 @@
-
-
-
 (require 'init-package)
 (require 'init-basic)
 (require 'init-ui)
 (require 'init-lsp)
 (require 'init-complete)
 (require 'init-cc)
-
+(require 'init-functions)
+(require 'init-keymaps)
 
 (provide 'init-config)
