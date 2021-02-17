@@ -7,6 +7,9 @@
 ;; 字体设置
 (set-frame-font "JetBrains Mono 20" nil t)
 
+;; 不显示标签栏
+(tab-bar-mode -1)
+
 ;; 关闭状态栏
 ;; (setq-default mode-line-format nil)
 
