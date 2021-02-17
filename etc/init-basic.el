@@ -154,6 +154,10 @@
 (use-package request
   :ensure t)
 
+;; cl-lib
+(use-package cl-lib
+  :ensure t)
+
 ;; async
 (use-package async
   :ensure t)
