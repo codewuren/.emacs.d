@@ -1,6 +1,9 @@
 ;;; init-basic.el
 ;;; Author: CodeWuRen
 
+; Don't show the splash screen
+(setq inhibit-startup-message t) 
+
 ; Change the asking's answer way
 (fset 'yes-or-no-p 'y-or-n-p) 
 
@@ -20,7 +23,7 @@
 ; Don't let Emacs make up backup file
 (setq make-backup-files nil) 
 
-;Don't make lockfile
+; Don't make lockfile
 (setq create-lockfiles nil) 
 
 ; Don't auto save the file
@@ -54,6 +57,6 @@
 (setq tab-bar-show nil) 
 
 ; Show the line number
-(global-linum-mode -1) 
+(global-linum-mode 1) 
 
 (provide 'init-basic)

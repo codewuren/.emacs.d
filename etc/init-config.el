@@ -7,5 +7,7 @@
 
 ; Require
 (require 'init-basic)
+(require 'init-function)
+(require 'init-keymap)
 
 (provide 'init-config)
