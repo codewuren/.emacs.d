@@ -18,7 +18,19 @@
       '((?\" . ?\")
         (?\( . ?\))
         (?\< . ?\>)
-        (?\{ . ?\}))) 
+        (?\{ . ?\})))
+
+; Set theme
+(load-theme 'tty-dark t t)
+(enable-theme 'tty-dark)
+
+; Font set
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "JetBrains Mono"
+                    :height 150
+                    :weight 'normal
+                    :width 'normal)
 
 ; Don't let Emacs make up backup file
 (setq make-backup-files nil) 
@@ -57,6 +69,6 @@
 (setq tab-bar-show nil) 
 
 ; Show the line number
-(global-linum-mode 1) 
+;(global-linum-mode 1) 
 
 (provide 'init-basic)

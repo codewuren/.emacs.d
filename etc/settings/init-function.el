@@ -3,6 +3,6 @@
 (defun open-config-directory () 
 	"Open emacs config directory."
         (interactive)
-	(dired "~\\.emacs.d"))
+	(dired "~/.emacs.d"))
 
 (provide 'init-function)
