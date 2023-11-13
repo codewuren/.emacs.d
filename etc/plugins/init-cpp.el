@@ -1,7 +1,7 @@
 ;;; init-cpp.el
 
 (use-package ccls
-    :ensure t)
+  :ensure t)
 
 
 (provide 'init-cpp)

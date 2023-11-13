@@ -1,4 +1,5 @@
-; Requires
+;;; init-plugins.el
+
 (require 'init-which-key)
 (require 'init-lsp)
 (require 'init-cpp)
