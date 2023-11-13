@@ -40,8 +40,8 @@
 ;; Font set
 ;; Set default font
 (set-face-attribute 'default nil
-                    :family "JetBrains Mono"
-                    :height 100
+                    :family "FantasqueSansM Nerd Font"
+                    :height 120
                     :weight 'normal
                     :width 'normal)
 
