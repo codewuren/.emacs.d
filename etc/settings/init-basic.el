@@ -55,7 +55,9 @@
 (setq auto-save-default nil) 
 
 ; The tab width
-(setq-default tab-width 4)
+; C/C++ TAB Indent
+(setq-default c-basic-offset 4)
+
 
 ; Use tab indent
 (setq-default indent-tabs-mode nil) 
